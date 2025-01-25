@@ -1,0 +1,21 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+
+     {% if title in entries %}
+        <h1>{{title}}</h1>
+        <div>{{contenu}}</div>
+     {% else %}  
+         <div> error entry not fond</div> 
+    {% endif %}
+    
+       
+    <button><a href="{% url 'edit' title %}">Edit</a></button>
+    <button><a href="{% url 'convertir' title %}">convert to html</a></button>   
+
+            
+{% endblock %}
